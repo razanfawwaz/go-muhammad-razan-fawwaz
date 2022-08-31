@@ -1,4 +1,4 @@
-# (2) Version Control and Branch Management (Git)
+# (3) Version Control and Branch Management (Git)
 
 1. Git merupakan salah satu **version control system** yang digunakan oleh developer untuk menyimpan, mengembangkan, dan mengatur software secara bersama-sama.
 2. Beberapa provider Git, yakni:
