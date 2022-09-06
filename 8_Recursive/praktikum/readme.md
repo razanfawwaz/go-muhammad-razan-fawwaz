@@ -1,4 +1,4 @@
-# Tugas Basic Programming
+# Tugas Recursive, Number Theory, and Sorting
 
 
 Berikut merupakan screenshot dari hasil kode yang dijalankan.
