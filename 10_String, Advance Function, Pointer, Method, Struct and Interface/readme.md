@@ -14,8 +14,8 @@ str2 := strings.Replace(str1, "Hello", "Hi", 1) // Output: Hi World
 ```
 
 ## Advance Function
-- Variadic Function, merupakan fungsi yang dapat menerima banyak parameter. 
-Contoh:
+- Variadic Function, merupakan fungsi yang dapat menerima banyak parameter.
+  Contoh:
 ```go
 func sum(numbers ...int) int {
     total := 0
@@ -26,14 +26,14 @@ func sum(numbers ...int) int {
 }
 ```
 - Anonymous function, merupakan fungsi yang tidak memiliki nama.
-Contoh:
+  Contoh:
 ```go
 func(){
 	fmt.Println("Hello World")
 }
 ```
 - Closure, merupakan fungsi yang dapat mengakses variabel diluar fungsi.
-Contoh:
+  Contoh:
 ```go
 func newCounter() func() int {
     i := 0
@@ -44,7 +44,7 @@ func newCounter() func() int {
 }
 ```
 - Defer function, merupakan fungsi yang akan dieksekusi setelah fungsi yang memanggilnya selesai dieksekusi.
-Contoh:
+  Contoh:
 ```go
 func main() {
     defer fmt.Println("World")
