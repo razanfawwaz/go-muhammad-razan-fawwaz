@@ -1,4 +1,4 @@
-# (11) Database, DDL, DML
+# (12) Database, DDL, DML
 
 # Database
 Database merupakan kumpulan data yang disimpan secara terstruktur. Database dapat diakses dan diolah menggunakan bahasa khusus yang disebut dengan bahasa database. 
