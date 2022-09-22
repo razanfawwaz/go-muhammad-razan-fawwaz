@@ -1,0 +1,2 @@
+My username: razanfawwaz 
+With host: uname -a razan at Thu Sep 22 11:38:54 WIB 2022/about_me/my_system_info/about_this_laptop.txt
