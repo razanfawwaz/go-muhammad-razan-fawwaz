@@ -37,7 +37,7 @@ func GetUserController(c echo.Context) error {
 
 func CreateUserController(c echo.Context) error {
 	// create user
-	user := []models.User{}
+	user := models.User{}
 
 	err := c.Bind(&user)
 	if err != nil {
