@@ -64,7 +64,7 @@ func LoginUser(user *models.User) (interface{}, error) {
 
 	var err error
 
-	user.Token, err = middlewares.CreateToken(strconv.Itoa(int(user.ID)))
+	user.Token, err = middlewares.CreateToken(strconv.Itoa(int(user.ID)), user.Email)
 	if err != nil {
 		return nil, err
 	}

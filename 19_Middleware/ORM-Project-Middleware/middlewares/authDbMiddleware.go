@@ -1,17 +1,17 @@
 package middlewares
 
 import (
+	"fmt"
 	"github.com/labstack/echo/v4"
 	"part3-orm/config"
 	"part3-orm/models"
 )
 
-func BasicAuthDB(username, password string, c echo.Context) (bool, error) {
-	var db = config.DB
+func BasicAuthDB(email, password string, c echo.Context) (bool, error) {
 	var user models.User
-	db.Where("username = ? AND password = ?", username, password).First(&user)
-	if user.ID != 0 {
-		return true, nil
+	fmt.Println(email, password)
+	if err := config.DB.Where("email = ? AND password = ?", email, password).First(&user).Error; err != nil {
+		return false, err
 	}
-	return false, nil
+	return true, nil
 }
