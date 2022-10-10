@@ -5,7 +5,6 @@ import (
 	echomid "github.com/labstack/echo/v4/middleware"
 	"part3-orm/constants"
 	"part3-orm/controllers"
-	"part3-orm/middlewares"
 )
 
 func New() *echo.Echo {
@@ -13,15 +12,24 @@ func New() *echo.Echo {
 
 	e.POST("/users", controllers.CreateUserController)
 	e.POST("/login", controllers.LoginUsersController)
-	e.GET("/users", controllers.GetUserDetailController)
+	e.GET("/books", controllers.GetBooksController)
+	e.GET("/books/:id", controllers.GetBookController)
 
-	eAuth := e.Group("")
-	eAuth.Use(echomid.BasicAuth(middlewares.BasicAuthDB))
-	eAuth.DELETE("/:id", controllers.DeleteUserController)
-	eAuth.PUT("/:id", controllers.UpdateUserController)
+	//eAuth := e.Group("")
+	//eAuth.Use(echomid.BasicAuth(middlewares.BasicAuthDB))
+	//eAuth.DELETE("/:id", controllers.DeleteUserController)
+	//eAuth.PUT("/:id", controllers.UpdateUserController)
+	//eAuth.DELETE("/books/:id", controllers.DeleteBookController)
+	//eAuth.PUT("/books/:id", controllers.UpdateBookController)
 
 	jwtAuth := e.Group("")
 	jwtAuth.Use(echomid.JWT([]byte(constants.SECRET_JWT)))
 	jwtAuth.GET("/users", controllers.GetUsersControllers)
+	jwtAuth.GET("/users/:id", controllers.GetUserController)
+	jwtAuth.DELETE("/users/:id", controllers.DeleteUserController)
+	jwtAuth.PUT("/users/:id", controllers.UpdateUserController)
+	jwtAuth.POST("/books", controllers.CreateBookController)
+	jwtAuth.DELETE("/books/:id", controllers.DeleteBookController)
+	jwtAuth.PUT("/books/:id", controllers.UpdateBookController)
 	return e
 }

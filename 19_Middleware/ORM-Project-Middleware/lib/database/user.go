@@ -24,14 +24,6 @@ func GetUser(id string) (interface{}, error) {
 	return user, nil
 }
 
-func CreateUser(user *models.User) (interface{}, error) {
-	result := config.DB.Create(&user)
-	if result.Error != nil {
-		return nil, result.Error
-	}
-	return user, nil
-}
-
 func DeleteUser(id string) (interface{}, error) {
 	var user []models.User
 	if err := config.DB.Delete(&user, id).Error; err != nil {
