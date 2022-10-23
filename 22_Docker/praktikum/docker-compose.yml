@@ -1,0 +1,25 @@
+version: "2.1"
+services:
+  db_mysql:
+    image: "mysql:latest"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "dbclean"
+    healthcheck:
+      test: ["CMD", "mysql", "-u", "root", "-p root", "-e", "show schemas"]
+      interval: 5s
+
+  rest_api-user:
+    image: "docker-alta"
+    #    build: .
+    ports:
+      - "7979:9999"
+    env_file:
+      - ".env"
+
+    environment:
+      DB_ADDRESS: "db_mysql:3306"
+      APIPort: ":6969"
+    depends_on:
+      db_mysql:
+        condition: service_healthy
