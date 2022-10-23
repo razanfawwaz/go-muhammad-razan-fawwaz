@@ -29,6 +29,7 @@ func New() *echo.Echo {
 
 	e.POST("/users", userController.Create(config.DB))
 	e.POST("/login", userController.Auth(config.DB))
+	e.GET("/users", userController.Find(config.DB))
 
 	a := e.Group("/users/jwt")
 	data := config.LoadENV()

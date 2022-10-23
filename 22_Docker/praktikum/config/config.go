@@ -37,7 +37,7 @@ func initMigration() {
 
 func LoadENV() map[string]string {
 	// load file env
-	err := godotenv.Load(".env")
+	err := godotenv.Load("../.env")
 	if err != nil {
 		log.Println("Error when load env : ", err.Error())
 	}
