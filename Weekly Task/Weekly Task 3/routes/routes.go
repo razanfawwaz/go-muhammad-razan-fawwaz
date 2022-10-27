@@ -37,6 +37,6 @@ func New() *echo.Echo {
 	e.POST("/blogs", blogController.CreateBlog(config.DB))
 	e.PUT("/blogs/:id", blogController.UpdateBlog(config.DB))
 	e.DELETE("/blogs/:id", blogController.DeleteBlog(config.DB))
-	
+
 	return e
 }
